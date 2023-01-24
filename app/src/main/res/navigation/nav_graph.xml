@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoadCurrency">
+
+    <fragment
+        android:id="@+id/LoadCurrency"
+        android:name="kg.nur.currencytest.ui.load.LoadCurrency"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_load_currency">
+        <action
+            android:id="@+id/action_LoadCurrency_to_Currency"
+            app:destination="@id/Currency" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Currency"
+        android:name="kg.nur.currencytest.ui.currency.Currency"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_currency" >
+        <action
+            android:id="@+id/action_Currency_to_selectCurrencyFragment"
+            app:destination="@id/selectCurrencyFragment" />
+        <action
+            android:id="@+id/action_Currency_to_selectCurrencyTwoFragment"
+            app:destination="@id/selectCurrencyTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectCurrencyFragment"
+        android:name="kg.nur.currencytest.ui.select.SelectCurrencyFragment"
+        android:label="fragment_select_currency"
+        tools:layout="@layout/fragment_select_currency" />
+    <fragment
+        android:id="@+id/selectCurrencyTwoFragment"
+        android:name="kg.nur.currencytest.ui.select.SelectCurrencyTwoFragment"
+        android:label="SelectCurrencyTwoFragment"
+        tools:layout="@layout/fragment_select_currency"/>
+</navigation>
